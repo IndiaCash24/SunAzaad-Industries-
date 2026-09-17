@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SunAzaad Industries | Next-Gen Mobile Apps, Web Platforms & Software Training</title>
+  <meta name="description" content="SunAzaad Industries architects high-performance iOS, Android, and Web applications while empowering developers through real-world, project-based coding bootcamps." />
+  <meta property="og:title" content="SunAzaad Industries | Next-Gen Mobile Apps & Software Training" />
+  <meta property="og:description" content="Custom Mobile App Development, Web Engineering, Digital Software Solutions, and Hands-on Coding Bootcamps." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#060810" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            dark: {
+              950: '#04060a',
+              900: '#07090e',
+              850: '#0d1117',
+              800: '#131924',
+              700: '#1e293b',
+              600: '#334155'
+            },
+            cyan: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2'
+            },
+            indigo: {
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5'
+            },
+            purple: {
+              400: '#c084fc',
+              500: '#a855f7',
+              600: '#9333ea'
+            }
+          },
+          animation: {
+            'float-slow': 'floating 5s ease-in-out infinite',
+            'float-delayed': 'floating 6s ease-in-out 2.5s infinite',
+            'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+            'marquee': 'marquee 25s linear infinite',
+            'marquee-reverse': 'marqueeRev 25s linear infinite'
+          },
+          keyframes: {
+            floating: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.35', transform: 'scale(1)' },
+              '50%': { opacity: '0.65', transform: 'scale(1.06)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            marqueeRev: {
+              '0%': { transform: 'translateX(-50%)' },
+              '100%': { transform: 'translateX(0%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Glassmorphism & High-Tech Accents */
+    .glass-panel {
+      background: rgba(13, 17, 23, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-panel-glow {
+      background: rgba(15, 22, 34, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      box-shadow: 0 0 30px -8px rgba(6, 182, 212, 0.22);
+    }
+    .glass-input {
+      background: rgba(10, 14, 22, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: all 0.25s ease;
+    }
+    .glass-input:focus {
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2);
+      outline: none;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 10%, #22d3ee 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-cyan {
+      background: linear-gradient(135deg, #67e8f9 0%, #38bdf8 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-border-btn {
+      position: relative;
+      background: linear-gradient(135deg, #06b6d4, #6366f1, #a855f7);
+      padding: 1px;
+      border-radius: 0.75rem;
+    }
+    .gradient-border-btn > span {
+      background: #07090e;
+      border-radius: calc(0.75rem - 1px);
+      transition: background 0.3s ease;
+    }
+    .gradient-border-btn:hover > span {
+      background: transparent;
+    }
+    /* Grid Mesh Background */
+    .bg-mesh-grid {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    /* Hide scrollbars for ticker */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-300 relative min-h-screen overflow-x-hidden">
+
+  <!-- Ambient Radiant Glow Orbs in Background -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[120px] animate-pulse-glow"></div>
+    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] bg-indigo-500/12 rounded-full blur-[140px] animate-pulse-glow" style="animation-delay: 2s;"></div>
+    <div class="absolute -bottom-40 left-1/3 w-[550px] h-[550px] bg-purple-500/15 rounded-full blur-[130px] animate-pulse-glow" style="animation-delay: 4s;"></div>
+    <div class="absolute inset-0 bg-mesh-grid opacity-35"></div>
+  </div>
+
+  <!-- STICKY HEADER & NAVBAR -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 bg-dark-950/70 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="#home" id="brand-logo" class="flex items-center gap-3.5 group focus:outline-none">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-500 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-lg shadow-cyan-500/20">
+            <div class="w-full h-full bg-dark-900 rounded-[10px] flex items-center justify-center">
+              <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">SA</span>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-1.5">
+              <span class="text-lg font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">SunAzaad</span>
+              <span class="text-xs font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">Industries</span>
+            </div>
+            <span class="text-[11px] text-slate-400 font-medium tracking-wide">Next-Gen Software & Training</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="#home" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5">Home</a>
+          <a href="#services" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5">Services</a>
+          <a href="#tech-stack" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5">Tech Stack</a>
+          <a href="#training" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5">Education & Bootcamps</a>
+          <a href="#why-us" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5">Why Us</a>
+          <a href="#contact" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5">Contact Us</a>
+        </nav>
+
+        <!-- CTA & Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#contact" id="nav-cta-btn" class="gradient-border-btn group">
+            <span class="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white group-hover:text-white transition-all">
+              <span>Get Started</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            </span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="flex items-center md:hidden">
+          <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white focus:outline-none hover:bg-white/10 transition-colors" aria-label="Toggle Navigation Menu">
+            <i id="menu-icon-bars" data-lucide="menu" class="w-6 h-6"></i>
+            <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-white/10 bg-dark-900/95 backdrop-blur-2xl px-5 pt-3 pb-6 transition-all duration-300">
+      <div class="flex flex-col space-y-2">
+        <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Home</a>
+        <a href="#services" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Core Services</a>
+        <a href="#tech-stack" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Tech Stack</a>
+        <a href="#training" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Education & Training</a>
+        <a href="#why-us" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Why SunAzaad</a>
+        <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Contact Us</a>
+        <div class="pt-3">
+          <a href="#contact" class="w-full text-center block py-3 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 hover:opacity-95 shadow-lg shadow-cyan-500/20">
+            Get Started with Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="relative z-10 pt-28 sm:pt-36">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copy & CTAs -->
+        <div class="lg:col-span-7 flex flex-col items-start text-left">
+          
+          <!-- Live Status Tag -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-xs sm:text-sm font-medium mb-6">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
+            </span>
+            <span>Empowering Digital Enterprises & Next-Gen Developers</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-6">
+            Building Next-Gen <span class="gradient-text">Mobile Apps</span>, Web Platforms & <span class="text-indigo-400">Empowering Tech Talent</span>
+          </h1>
+
+          <!-- Sub-headline -->
+          <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-8 max-w-2xl">
+            SunAzaad Industries delivers end-to-end digital solutions—architecting high-octane Android & iOS apps and scalable web engines, while mentoring aspiring engineers into industry-ready software leaders.
+          </p>
+
+          <!-- CTAs & Action Row -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
+            <a href="#services" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 hover:opacity-95 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+              <span>Explore Services</span>
+            </a>
+            <a href="#training" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-cyan-400/40 transition-all duration-200">
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-cyan-400"></i>
+              <span>Enroll in Coding Bootcamps</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges & Highlights -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10 w-full">
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">150+</p>
+              <p class="text-xs sm:text-sm text-slate-400">Apps & Systems Shipped</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-cyan-400">1,200+</p>
+              <p class="text-xs sm:text-sm text-slate-400">Engineers Trained</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-purple-400">99.8%</p>
+              <p class="text-xs sm:text-sm text-slate-400">Client Satisfaction</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-indigo-400">100%</p>
+              <p class="text-xs sm:text-sm text-slate-400">Code & IP Transfer</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Floating Glassmorphism Element -->
+        <div class="lg:col-span-5 relative">
+          
+          <!-- Decorative Glow behind device -->
+          <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl blur-xl opacity-30 animate-pulse-glow"></div>
+
+          <!-- Glass Terminal / Device Simulator Card -->
+          <div class="relative glass-panel rounded-2xl p-5 sm:p-6 shadow-2xl border border-white/15 animate-float-slow">
+            
+            <!-- Window Topbar -->
+            <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                <span class="ml-2 text-xs font-mono text-slate-400">sunazaad.engine.v2.4</span>
+              </div>
+              <div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-mono">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Active</span>
+              </div>
+            </div>
+
+            <!-- Interactive Tab Bar inside Hero Widget -->
+            <div class="flex items-center gap-2 p-1 rounded-lg bg-dark-900 border border-white/10 mb-4">
+              <button onclick="switchHeroTab('app')" id="hero-tab-app" class="hero-tab-btn flex-1 py-1.5 text-xs font-medium rounded-md text-white bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all flex items-center justify-center gap-1.5">
+                <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+                <span>Mobile App</span>
+              </button>
+              <button onclick="switchHeroTab('code')" id="hero-tab-code" class="hero-tab-btn flex-1 py-1.5 text-xs font-medium rounded-md text-slate-400 hover:text-slate-200 transition-all flex items-center justify-center gap-1.5">
+                <i data-lucide="code" class="w-3.5 h-3.5"></i>
+                <span>Clean Code</span>
+              </button>
+              <button onclick="switchHeroTab('cloud')" id="hero-tab-cloud" class="hero-tab-btn flex-1 py-1.5 text-xs font-medium rounded-md text-slate-400 hover:text-slate-200 transition-all flex items-center justify-center gap-1.5">
+                <i data-lucide="database" class="w-3.5 h-3.5"></i>
+                <span>Cloud Sync</span>
+              </button>
+            </div>
+
+            <!-- Tab Content 1: Mobile App Simulator -->
+            <div id="hero-view-app" class="space-y-3">
+              <div class="p-3.5 rounded-xl bg-dark-900/90 border border-white/10">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-semibold text-slate-300">Live Production App Status</span>
+                  <span class="text-[11px] font-mono text-cyan-400">Build #841</span>
+                </div>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-400">Android / Kotlin Engine</span>
+                    <span class="text-emerald-400 font-mono">Passing (99.9%)</span>
+                  </div>
+                  <div class="w-full bg-slate-800 rounded-full h-1.5">
+                    <div class="bg-gradient-to-r from-cyan-400 to-emerald-400 h-1.5 rounded-full" style="width: 98%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Mock Card in App Simulator -->
+              <div class="p-3.5 rounded-xl bg-gradient-to-br from-indigo-950/60 to-purple-950/60 border border-indigo-500/20">
+                <div class="flex items-center gap-3">
+                  <div class="p-2.5 rounded-lg bg-indigo-500/20 text-indigo-400">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h2 class="text-xs font-semibold text-white">Enterprise Scalability Ready</h2>
+                    <p class="text-[11px] text-slate-300">Zero latency, offline-first sync with Firestore & PostgreSQL</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 2: Clean Code (Hidden by default) -->
+            <div id="hero-view-code" class="hidden font-mono text-xs text-slate-300 bg-dark-950 p-3.5 rounded-xl border border-white/10 space-y-1 overflow-x-auto">
+              <p class="text-slate-500">// SunAzaad Architecture Standard</p>
+              <p><span class="text-purple-400">interface</span> <span class="text-cyan-300">AppConfig</span> {</p>
+              <p class="pl-4">platform: <span class="text-emerald-300">'iOS'</span> | <span class="text-emerald-300">'Android'</span> | <span class="text-emerald-300">'Web'</span>;</p>
+              <p class="pl-4">engine: <span class="text-amber-300">'Jetpack Compose'</span>;</p>
+              <p class="pl-4">offlineSync: <span class="text-purple-400">true</span>;</p>
+              <p>}</p>
+              <p class="text-cyan-400 font-semibold">// Deployed in 42ms</p>
+            </div>
+
+            <!-- Tab Content 3: Cloud Sync (Hidden by default) -->
+            <div id="hero-view-cloud" class="hidden p-3.5 rounded-xl bg-dark-900 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Cloud Cluster</span>
+                <span class="text-cyan-400 font-mono">us-central1 / Multi-Region</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-center">
+                <div class="p-2 rounded-lg bg-dark-950 border border-white/5">
+                  <p class="text-[10px] text-slate-400">API Response</p>
+                  <p class="text-sm font-bold text-emerald-400 font-mono">18ms</p>
+                </div>
+                <div class="p-2 rounded-lg bg-dark-950 border border-white/5">
+                  <p class="text-[10px] text-slate-400">Throughput</p>
+                  <p class="text-sm font-bold text-purple-400 font-mono">24.5k req/s</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge Card 1 -->
+            <div class="absolute -bottom-5 -left-5 p-3 rounded-xl glass-panel-glow border border-cyan-500/30 flex items-center gap-3 animate-float-delayed">
+              <div class="w-9 h-9 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-white">Clean Architecture</p>
+                <p class="text-[10px] text-slate-300">Modern Jetpack & React 19</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge Card 2 -->
+            <div class="absolute -top-4 -right-4 p-2.5 rounded-xl glass-panel border border-purple-500/30 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping"></span>
+              <span class="text-[11px] font-semibold text-purple-300">Cohort 2026 Open</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: CORE SERVICES GRID -->
+    <section id="services" class="py-20 lg:py-28 relative border-t border-white/5 bg-dark-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Our Core Capabilities</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            Engineered for <span class="gradient-text">Performance</span> & Precision
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 mt-4 leading-relaxed">
+            From zero to app store and cloud deployments, we craft bulletproof digital solutions and nurture exceptional engineering talent.
+          </p>
+        </div>
+
+        <!-- 5 Interactive Service Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          
+          <!-- Card 1: Mobile App Dev -->
+          <div class="group relative glass-panel rounded-2xl p-7 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl pointer-events-none"></div>
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
+                <i data-lucide="smartphone" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                Mobile Application Development
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Native Android (Kotlin/Jetpack Compose), iOS (Swift), and high-performance cross-platform Flutter/React Native solutions with offline-first architecture, hardware telemetry, and Play/App Store deployment.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Kotlin</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Swift</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Flutter</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Compose</span>
+              </div>
+            </div>
+            <button onclick="openServiceModal('mobile')" class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 group-hover:underline">
+              <span>View Tech Deliverables</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Card 2: Custom Web Dev & PWAs -->
+          <div class="group relative glass-panel rounded-2xl p-7 hover:border-indigo-500/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-indigo-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent rounded-2xl pointer-events-none"></div>
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all duration-300">
+                <i data-lucide="globe" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors">
+                Custom Web Development & PWAs
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Modern enterprise web architectures, Progressive Web Apps with offline capabilities, headless CMS integrations, and lightning-fast client experiences powered by React 19, TypeScript, and Tailwind CSS.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">React 19</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">TypeScript</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">PWA</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Tailwind</span>
+              </div>
+            </div>
+            <button onclick="openServiceModal('web')" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300 group-hover:underline">
+              <span>View Tech Deliverables</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Card 3: UI/UX Design & Prototyping -->
+          <div class="group relative glass-panel rounded-2xl p-7 hover:border-purple-500/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-purple-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl pointer-events-none"></div>
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all duration-300">
+                <i data-lucide="palette" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+                UI/UX Interface Design & Prototyping
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Mathematical typographic scales, WCAG AA accessibility, cohesive Design Systems, clickable high-fidelity Figma prototypes, and micro-interaction specifications that translate flawlessly into production code.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Figma</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Design Systems</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Prototypes</span>
+              </div>
+            </div>
+            <button onclick="openServiceModal('design')" class="inline-flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-purple-300 group-hover:underline">
+              <span>View Tech Deliverables</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Card 4: Hands-on Coding Training -->
+          <div class="group relative glass-panel rounded-2xl p-7 hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-2xl pointer-events-none"></div>
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300">
+                <i data-lucide="terminal" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors">
+                Hands-on Coding & Software Training
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Intensive developer bootcamps centered on building real-world commercial projects. Master Git collaboration, clean code, pull request reviews, and production deployment under senior engineering mentors.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Live Mentorship</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Git Workflows</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Code Reviews</span>
+              </div>
+            </div>
+            <a href="#training" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 group-hover:underline">
+              <span>Explore Bootcamps</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Card 5: IT Consulting & Cloud/Database -->
+          <div class="group relative glass-panel rounded-2xl p-7 hover:border-amber-500/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-amber-500/10 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent rounded-2xl pointer-events-none"></div>
+            <div>
+              <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all duration-300">
+                <i data-lucide="cloud-cog" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+                IT Consulting & Cloud / Database Solutions
+              </h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Enterprise cloud migration, serverless microservices, Firebase Firestore and PostgreSQL database optimization, container orchestration (Docker/Cloud Run), and automated CI/CD pipelines ensuring 99.9% uptime.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Firebase / Firestore</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">PostgreSQL</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Cloud Run</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">Docker</span>
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-slate-300 font-mono">CI/CD DevOps</span>
+              </div>
+            </div>
+            <button onclick="openServiceModal('cloud')" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300 group-hover:underline">
+              <span>View Tech Deliverables</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SOFTWARE & CODING TRAINING -->
+    <section id="training" class="py-20 lg:py-28 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
+              <i data-lucide="award" class="w-3.5 h-3.5"></i>
+              <span>SunAzaad Academy</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              Software Engineering <span class="gradient-text">Bootcamps</span>
+            </h2>
+            <p class="text-base sm:text-lg text-slate-300 mt-4 leading-relaxed">
+              No theoretical slideshows. We run rigorous, project-driven training programs where you code production systems, master modern frameworks, and graduate portfolio-ready.
+            </p>
+          </div>
+
+          <!-- Quick Stat Pill -->
+          <div class="mt-6 md:mt-0 flex items-center gap-3 p-3.5 rounded-xl glass-panel border border-cyan-500/30">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-white">Next Cohort Starting Soon</p>
+              <p class="text-xs text-slate-400">Limited to 25 seats per cohort</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Track Switcher Tabs -->
+        <div class="flex flex-wrap gap-2.5 p-1.5 rounded-xl bg-dark-900 border border-white/10 mb-8 max-w-2xl">
+          <button onclick="switchBootcampTrack('android')" id="track-btn-android" class="track-tab-btn flex-1 min-w-[140px] py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 shadow-md transition-all">
+            Android & Mobile Native
+          </button>
+          <button onclick="switchBootcampTrack('web')" id="track-btn-web" class="track-tab-btn flex-1 min-w-[140px] py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold text-slate-400 hover:text-slate-200 transition-all">
+            Full-Stack Web Dev
+          </button>
+          <button onclick="switchBootcampTrack('cloud')" id="track-btn-cloud" class="track-tab-btn flex-1 min-w-[140px] py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold text-slate-400 hover:text-slate-200 transition-all">
+            Cloud & Backend Architecture
+          </button>
+        </div>
+
+        <!-- Track 1: Android & Mobile Native -->
+        <div id="track-content-android" class="glass-panel rounded-2xl p-6 sm:p-10 border border-white/15">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-semibold">12-Week Intensive</span>
+                <span class="text-xs text-slate-400">Beginner to Advanced • Live Remote Sessions</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                Android Native Engineering with Kotlin & Jetpack Compose
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                Master modern Android application architecture. From declarative UI in Jetpack Compose, asynchronous coroutines & flows, to Room local persistence and Firebase cloud sync, build 4 commercial-grade mobile apps.
+              </p>
+              
+              <!-- Syllabus Highlights -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+                  <span>Kotlin Fundamentals & Clean Architecture (MVVM)</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+                  <span>Jetpack Compose UI & State Management</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+                  <span>Room Database, Retrofit & REST APIs</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+                  <span>Play Store Deployment & CI/CD Pipelines</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <a href="#contact" onclick="preselectService('Coding Training / Bootcamp')" class="px-6 py-3 rounded-xl font-semibold text-white bg-cyan-500 hover:bg-cyan-600 transition-colors shadow-lg shadow-cyan-500/20 inline-flex items-center gap-2">
+                  <span>Apply for Android Cohort</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <button onclick="downloadSyllabus('android')" class="px-4 py-3 rounded-xl font-semibold text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors text-sm inline-flex items-center gap-2">
+                  <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
+                  <span>Download Curriculum</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Student Project Showcase Card -->
+            <div class="lg:col-span-5 p-6 rounded-xl bg-dark-900/90 border border-white/10 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                <span class="text-xs font-mono text-cyan-400">Capstone Project Preview</span>
+                <span class="text-xs text-slate-400">Week 10-12</span>
+              </div>
+              <h4 class="text-lg font-bold text-white">"FinTrack Pro" Mobile FinTech App</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Students construct a real-time expense and crypto investment tracker with biometric auth, offline caching, and responsive charts.
+              </p>
+              <div class="p-3 rounded-lg bg-dark-950 font-mono text-xs text-slate-300 border border-white/5 space-y-1">
+                <p class="text-emerald-400">✓ 100% Kotlin 2.0</p>
+                <p class="text-cyan-400">✓ Coroutines + StateFlow</p>
+                <p class="text-purple-400">✓ Automated Unit Testing (JUnit5)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 2: Full-Stack Web Dev (Hidden by default) -->
+        <div id="track-content-web" class="hidden glass-panel rounded-2xl p-6 sm:p-10 border border-white/15">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold">14-Week Intensive</span>
+                <span class="text-xs text-slate-400">Comprehensive Full-Stack • Real Client Projects</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                Modern Full-Stack Web Engineering (React, Node & Cloud)
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                Develop scalable web applications with React 19, TypeScript, Tailwind CSS, Express, and cloud databases. Master authentication, REST/GraphQL APIs, and server-side performance.
+              </p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 mt-1 shrink-0"></i>
+                  <span>TypeScript & Advanced React Component Patterns</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 mt-1 shrink-0"></i>
+                  <span>Backend REST APIs with Node.js & Express</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 mt-1 shrink-0"></i>
+                  <span>PostgreSQL & Firebase Auth Workflows</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 mt-1 shrink-0"></i>
+                  <span>Continuous Deployment to Cloud Run & Vercel</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <a href="#contact" onclick="preselectService('Coding Training / Bootcamp')" class="px-6 py-3 rounded-xl font-semibold text-white bg-indigo-500 hover:bg-indigo-600 transition-colors shadow-lg shadow-indigo-500/20 inline-flex items-center gap-2">
+                  <span>Apply for Web Cohort</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <button onclick="downloadSyllabus('web')" class="px-4 py-3 rounded-xl font-semibold text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors text-sm inline-flex items-center gap-2">
+                  <i data-lucide="download" class="w-4 h-4 text-indigo-400"></i>
+                  <span>Download Curriculum</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 p-6 rounded-xl bg-dark-900/90 border border-white/10 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                <span class="text-xs font-mono text-indigo-400">Capstone Project Preview</span>
+                <span class="text-xs text-slate-400">Week 12-14</span>
+              </div>
+              <h4 class="text-lg font-bold text-white">"OmniSaaS" Multi-Tenant Platform</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Build a SaaS collaborative workspace with real-time markdown docs, role-based access control, and team invitations.
+              </p>
+              <div class="p-3 rounded-lg bg-dark-950 font-mono text-xs text-slate-300 border border-white/5 space-y-1">
+                <p class="text-indigo-400">✓ React 19 + TypeScript</p>
+                <p class="text-cyan-400">✓ PostgreSQL + Drizzle ORM</p>
+                <p class="text-emerald-400">✓ Dockerized & Production Ready</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 3: Cloud & Backend Architecture (Hidden by default) -->
+        <div id="track-content-cloud" class="hidden glass-panel rounded-2xl p-6 sm:p-10 border border-white/15">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold">10-Week Masterclass</span>
+                <span class="text-xs text-slate-400">Intermediate/Senior Level • Systems Design</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                Cloud Systems, Microservices & Database Engineering
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                Engineered for developers who want to command high-scale systems. Deep dive into distributed database models, caching strategies with Redis, container orchestration with Docker, and CI/CD automation.
+              </p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400 mt-1 shrink-0"></i>
+                  <span>Distributed Database Modeling & Index Optimization</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400 mt-1 shrink-0"></i>
+                  <span>Docker Containerization & Cloud Run Orchestration</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400 mt-1 shrink-0"></i>
+                  <span>Redis In-Memory Caching & Rate Limiting</span>
+                </div>
+                <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400 mt-1 shrink-0"></i>
+                  <span>Automated Testing & Security Hardening</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <a href="#contact" onclick="preselectService('Cloud & Database Consulting')" class="px-6 py-3 rounded-xl font-semibold text-white bg-purple-500 hover:bg-purple-600 transition-colors shadow-lg shadow-purple-500/20 inline-flex items-center gap-2">
+                  <span>Apply for Cloud Cohort</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <button onclick="downloadSyllabus('cloud')" class="px-4 py-3 rounded-xl font-semibold text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors text-sm inline-flex items-center gap-2">
+                  <i data-lucide="download" class="w-4 h-4 text-purple-400"></i>
+                  <span>Download Curriculum</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 p-6 rounded-xl bg-dark-900/90 border border-white/10 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                <span class="text-xs font-mono text-purple-400">System Design Capstone</span>
+                <span class="text-xs text-slate-400">Week 8-10</span>
+              </div>
+              <h4 class="text-lg font-bold text-white">High-Throughput Event Streaming Pipeline</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Architect and load-test a distributed messaging queue capable of handling 50,000 events/sec with fault tolerance.
+              </p>
+              <div class="p-3 rounded-lg bg-dark-950 font-mono text-xs text-slate-300 border border-white/5 space-y-1">
+                <p class="text-purple-400">✓ Microservices on Cloud Run</p>
+                <p class="text-cyan-400">✓ Redis Cluster + Pub/Sub</p>
+                <p class="text-emerald-400">✓ 99.99% Availability Architecture</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: TECH STACK & CAPABILITIES SHOWCASE -->
+    <section id="tech-stack" class="py-20 relative border-t border-white/5 bg-dark-900/50 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div class="text-center max-w-3xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+            <span>Engineering Arsenal</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Battle-Tested <span class="gradient-text">Technologies</span> We Command
+          </h2>
+          <p class="text-slate-300 text-base mt-3">
+            We build and instruct using modern, maintainable stacks with long-term ecosystem stability.
+          </p>
+        </div>
+      </div>
+
+      <!-- Marquee Ticker 1: Left to Right -->
+      <div class="relative w-full overflow-hidden no-scrollbar py-2">
+        <div class="flex space-x-6 animate-marquee w-max">
+          <!-- Repeat items for infinite loop -->
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="smartphone" class="w-5 h-5 text-cyan-400"></i>
+            <span class="text-sm font-bold text-white">Kotlin & Android Jetpack</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="apple" class="w-5 h-5 text-slate-200"></i>
+            <span class="text-sm font-bold text-white">iOS & Swift</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="layers" class="w-5 h-5 text-cyan-400"></i>
+            <span class="text-sm font-bold text-white">Flutter & Dart</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="atom" class="w-5 h-5 text-cyan-300"></i>
+            <span class="text-sm font-bold text-white">React 19 & Next.js</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="file-code" class="w-5 h-5 text-indigo-400"></i>
+            <span class="text-sm font-bold text-white">TypeScript</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="flame" class="w-5 h-5 text-amber-400"></i>
+            <span class="text-sm font-bold text-white">Firebase & Firestore</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="database" class="w-5 h-5 text-indigo-300"></i>
+            <span class="text-sm font-bold text-white">PostgreSQL & Drizzle</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="wind" class="w-5 h-5 text-cyan-400"></i>
+            <span class="text-sm font-bold text-white">Tailwind CSS</span>
+          </div>
+          <!-- Duplicate for seamless ticker -->
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="smartphone" class="w-5 h-5 text-cyan-400"></i>
+            <span class="text-sm font-bold text-white">Kotlin & Android Jetpack</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="apple" class="w-5 h-5 text-slate-200"></i>
+            <span class="text-sm font-bold text-white">iOS & Swift</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="layers" class="w-5 h-5 text-cyan-400"></i>
+            <span class="text-sm font-bold text-white">Flutter & Dart</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="atom" class="w-5 h-5 text-cyan-300"></i>
+            <span class="text-sm font-bold text-white">React 19 & Next.js</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="file-code" class="w-5 h-5 text-indigo-400"></i>
+            <span class="text-sm font-bold text-white">TypeScript</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="flame" class="w-5 h-5 text-amber-400"></i>
+            <span class="text-sm font-bold text-white">Firebase & Firestore</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Ticker 2: Reverse Direction -->
+      <div class="relative w-full overflow-hidden no-scrollbar py-2 mt-4">
+        <div class="flex space-x-6 animate-marquee-reverse w-max">
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="server" class="w-5 h-5 text-emerald-400"></i>
+            <span class="text-sm font-bold text-white">Node.js & Express</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="container" class="w-5 h-5 text-cyan-400"></i>
+            <span class="text-sm font-bold text-white">Docker & Containers</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="cloud" class="w-5 h-5 text-indigo-400"></i>
+            <span class="text-sm font-bold text-white">Cloud Run & Serverless</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="git-branch" class="w-5 h-5 text-rose-400"></i>
+            <span class="text-sm font-bold text-white">Git & GitHub Actions CI/CD</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="shield" class="w-5 h-5 text-amber-400"></i>
+            <span class="text-sm font-bold text-white">OAuth 2.0 & JWT Security</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="figma" class="w-5 h-5 text-purple-400"></i>
+            <span class="text-sm font-bold text-white">Figma & UI Prototyping</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+            <span class="text-sm font-bold text-white">Redis In-Memory Cache</span>
+          </div>
+          <!-- Duplicate for seamless ticker -->
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="server" class="w-5 h-5 text-emerald-400"></i>
+            <span class="text-sm font-bold text-white">Node.js & Express</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="container" class="w-5 h-5 text-cyan-400"></i>
+            <span class="text-sm font-bold text-white">Docker & Containers</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="cloud" class="w-5 h-5 text-indigo-400"></i>
+            <span class="text-sm font-bold text-white">Cloud Run & Serverless</span>
+          </div>
+          <div class="flex items-center gap-3 px-5 py-3 rounded-xl glass-panel border border-white/10 shrink-0">
+            <i data-lucide="git-branch" class="w-5 h-5 text-rose-400"></i>
+            <span class="text-sm font-bold text-white">Git & GitHub Actions CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: WHY US -->
+    <section id="why-us" class="py-20 lg:py-28 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/25 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            <span>The SunAzaad Advantage</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            Why Visionary Leaders & Developers <span class="gradient-text">Choose Us</span>
+          </h2>
+          <p class="text-slate-300 text-base sm:text-lg mt-4">
+            We bridge the gap between world-class enterprise software delivery and practical, high-impact talent incubation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="glass-panel p-6 rounded-2xl border border-white/10 hover:border-cyan-500/30 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-5">
+              <i data-lucide="fast-forward" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Rapid Speed-to-Market</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              We leverage reusable architectural patterns and automated CI/CD pipelines to ship production-grade MVPs and full releases up to 2.5x faster.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-white/10 hover:border-indigo-500/30 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-5">
+              <i data-lucide="code" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Zero Technical Debt</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Every codebase is built with strict linting, declarative types, dependency injection, and modular layers designed for seamless team handoffs.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-5">
+              <i data-lucide="lock" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">100% IP & Code Ownership</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              You own all intellectual property, source repositories, designs, and credentials from day one. Zero proprietary lock-in.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-white/10 hover:border-emerald-500/30 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Dual-Engine Synergy</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Our industry projects fuel real-world curricula in our academy, producing top-tier engineering talent ready for instant deployment.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE CTA BANNER -->
+    <section class="py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative rounded-3xl overflow-hidden p-8 sm:p-12 lg:p-16 border border-cyan-500/30 bg-gradient-to-r from-dark-900 via-dark-850 to-indigo-950/80 shadow-2xl">
+          
+          <div class="absolute -right-20 -top-20 w-80 h-80 bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+          <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-purple-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                <span>Start Your Digital Journey</span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                Have an App Idea or Want to Master Coding?
+              </h2>
+              <p class="text-slate-300 text-base sm:text-lg mt-4 max-w-2xl">
+                Partner with SunAzaad Industries today. Whether you need a full-cycle mobile development team or want to accelerate your engineering career, we are ready.
+              </p>
+            </div>
+            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4">
+              <a href="#contact" class="px-8 py-4 rounded-xl font-bold text-center text-white bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 hover:opacity-95 shadow-xl shadow-cyan-500/25 transition-all flex items-center justify-center gap-2.5">
+                <i data-lucide="message-square" class="w-5 h-5"></i>
+                <span>Initiate a Project</span>
+              </a>
+              <a href="#training" class="px-8 py-4 rounded-xl font-bold text-center text-slate-200 bg-white/5 hover:bg-white/10 border border-white/15 transition-all flex items-center justify-center gap-2.5">
+                <i data-lucide="book-open" class="w-5 h-5 text-cyan-400"></i>
+                <span>Explore Bootcamps</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CONTACT & INQUIRY FORM -->
+    <section id="contact" class="py-20 lg:py-28 relative border-t border-white/5 bg-dark-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left Column: Contact Details & Info -->
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                <span>Get in Touch</span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                Let's Build Something <span class="gradient-text">Extraordinary</span>
+              </h2>
+              <p class="text-slate-300 text-base leading-relaxed mb-8">
+                Send us a message regarding your upcoming mobile app, web platform, enterprise software requirement, or bootcamp enrollment. We reply within 4 business hours.
+              </p>
+
+              <!-- Contact Cards List -->
+              <div class="space-y-4 mb-8">
+                <div class="flex items-center gap-4 p-4 rounded-xl glass-panel border border-white/10">
+                  <div class="w-11 h-11 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-slate-400">Direct Inquiries</p>
+                    <a href="mailto:contact@sunazaad.com" class="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">contact@sunazaad.com</a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-xl glass-panel border border-white/10">
+                  <div class="w-11 h-11 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-slate-400">Phone & WhatsApp</p>
+                    <a href="tel:+15557862923" class="text-sm font-semibold text-white hover:text-indigo-400 transition-colors">+1 (555) 786-2923</a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-xl glass-panel border border-white/10">
+                  <div class="w-11 h-11 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-slate-400">HQ & Global Remote</p>
+                    <p class="text-sm font-semibold text-white">Innovation Tech Hub & Global Hybrid</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Guarantee Badge -->
+            <div class="p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/20 text-xs text-slate-300 flex items-center gap-3">
+              <i data-lucide="check-check" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+              <span>All client inquiries are protected by standard mutual Non-Disclosure (NDA) protocol.</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Quick Inquiry Form -->
+          <div class="lg:col-span-7">
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/15 relative shadow-2xl">
+              
+              <h3 class="text-xl font-bold text-white mb-2">Send an Inquiry</h3>
+              <p class="text-xs text-slate-400 mb-6">Fill in the specifications below and our engineering team will follow up promptly.</p>
+
+              <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="form-name" class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
+                    <input type="text" id="form-name" required placeholder="e.g. Alex Morgan" class="w-full px-4 py-3 rounded-xl glass-input text-sm text-white placeholder-slate-500" />
+                  </div>
+                  <div>
+                    <label for="form-email" class="block text-xs font-semibold text-slate-300 mb-1.5">Email Address *</label>
+                    <input type="email" id="form-email" required placeholder="alex@company.com" class="w-full px-4 py-3 rounded-xl glass-input text-sm text-white placeholder-slate-500" />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="form-service" class="block text-xs font-semibold text-slate-300 mb-1.5">Primary Interest / Service *</label>
+                    <select id="form-service" required class="w-full px-4 py-3 rounded-xl glass-input text-sm text-white bg-dark-900">
+                      <option value="Mobile Application Development">Mobile Application Development (iOS/Android)</option>
+                      <option value="Custom Web Development & PWAs">Custom Web Development & PWAs</option>
+                      <option value="UI/UX Interface Design">UI/UX Interface Design & Prototyping</option>
+                      <option value="Coding Training / Bootcamp">Coding Training / Developer Bootcamp</option>
+                      <option value="Cloud & Database Consulting">IT Consulting & Cloud Solutions</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="form-timeline" class="block text-xs font-semibold text-slate-300 mb-1.5">Estimated Timeline</label>
+                    <select id="form-timeline" class="w-full px-4 py-3 rounded-xl glass-input text-sm text-white bg-dark-900">
+                      <option value="Immediate (Under 1 month)">Immediate (Under 1 month)</option>
+                      <option value="1 - 3 months">1 - 3 months</option>
+                      <option value="3+ months">3+ months</option>
+                      <option value="Exploring Options">Just Exploring Options</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="form-message" class="block text-xs font-semibold text-slate-300 mb-1.5">Project Scope or Learning Objectives *</label>
+                  <textarea id="form-message" rows="4" required placeholder="Tell us about your project requirements, target platform, or career learning goals..." class="w-full px-4 py-3 rounded-xl glass-input text-sm text-white placeholder-slate-500 resize-none"></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 hover:opacity-95 shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2">
+                  <span id="btn-text">Transmit Inquiry</span>
+                  <i id="btn-icon" data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+
+              <!-- Success Alert Toast / Banner -->
+              <div id="form-success-banner" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-sm flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-bold">Inquiry Transmitted Successfully!</p>
+                  <p class="text-xs text-emerald-200 mt-0.5">Thank you for reaching out to SunAzaad Industries. An engineering lead has received your details and will follow up shortly.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-dark-950 pt-16 pb-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand Column -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3.5 mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-500 to-purple-500 p-[1.5px]">
+              <div class="w-full h-full bg-dark-900 rounded-[7px] flex items-center justify-center">
+                <span class="text-sm font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">SA</span>
+              </div>
+            </div>
+            <span class="text-lg font-bold text-white">SunAzaad Industries</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm mb-6">
+            Pioneering digital engineering through next-generation mobile applications, cloud web platforms, and industry-grade software education.
+          </p>
+          <div class="flex items-center gap-3 text-slate-400">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors" aria-label="GitHub">
+              <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors" aria-label="Twitter">
+              <i data-lucide="twitter" class="w-4 h-4"></i>
+            </a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors" aria-label="Discord">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links Column 1: Services -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Engineering</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <li><a href="#services" class="hover:text-cyan-400 transition-colors">Mobile App Dev (iOS/Android)</a></li>
+            <li><a href="#services" class="hover:text-cyan-400 transition-colors">Web Engineering & PWAs</a></li>
+            <li><a href="#services" class="hover:text-cyan-400 transition-colors">UI/UX Interface Systems</a></li>
+            <li><a href="#services" class="hover:text-cyan-400 transition-colors">Cloud & Database Architecture</a></li>
+            <li><a href="#services" class="hover:text-cyan-400 transition-colors">API & Backend Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2: Education -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Academy</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <li><a href="#training" class="hover:text-cyan-400 transition-colors">Android Jetpack Bootcamp</a></li>
+            <li><a href="#training" class="hover:text-cyan-400 transition-colors">Full-Stack Web Track</a></li>
+            <li><a href="#training" class="hover:text-cyan-400 transition-colors">Cloud & DevOps Masterclass</a></li>
+            <li><a href="#training" class="hover:text-cyan-400 transition-colors">Live Code Review Network</a></li>
+            <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Corporate Team Training</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 3: Company & Contact -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">SunAzaad</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <li><a href="#home" class="hover:text-cyan-400 transition-colors">About Us</a></li>
+            <li><a href="#why-us" class="hover:text-cyan-400 transition-colors">Why SunAzaad</a></li>
+            <li><a href="#tech-stack" class="hover:text-cyan-400 transition-colors">Technology Stack</a></li>
+            <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Contact Engineering</a></li>
+            <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Terms & Privacy Notice</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 SunAzaad Industries. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <span class="inline-flex items-center gap-1.5 text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>All Systems Operational</span>
+          </span>
+          <a href="#home" class="hover:text-slate-300 transition-colors">Back to Top ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SERVICE DETAIL MODAL (Interactive Dialog) -->
+  <div id="service-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-dark-950/80 backdrop-blur-md">
+    <div class="glass-panel max-w-lg w-full rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl relative">
+      <button onclick="closeServiceModal()" class="absolute top-5 right-5 p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/10" aria-label="Close Modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modal-icon-container" class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+        <i id="modal-icon" data-lucide="smartphone" class="w-6 h-6"></i>
+      </div>
+
+      <h3 id="modal-title" class="text-xl font-bold text-white mb-2">Service Deliverables</h3>
+      <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed mb-4">Description</p>
+
+      <div class="space-y-2 mb-6">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Key Tech Deliverables:</h4>
+        <ul id="modal-deliverables" class="text-xs sm:text-sm text-slate-300 space-y-1.5 list-disc list-inside">
+          <!-- Dynamically populated -->
+        </ul>
+      </div>
+
+      <div class="flex gap-3">
+        <a id="modal-cta" href="#contact" onclick="closeServiceModal()" class="flex-1 py-3 px-4 rounded-xl text-center font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:opacity-95 text-sm transition-all">
+          Request Estimate for This Service
+        </a>
+        <button onclick="closeServiceModal()" class="py-3 px-4 rounded-xl font-semibold text-slate-300 bg-white/5 hover:bg-white/10 text-sm border border-white/10 transition-colors">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE CLIENT-SIDE SCRIPTS -->
+  <script>
+    // Initialize Lucide Icons on load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+
+    // Mobile Navigation Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconBars = document.getElementById('menu-icon-bars');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    mobileMenuBtn?.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIconBars.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIconBars.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      }
+    });
+
+    // Close mobile menu on click of any mobile link
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconBars?.classList.remove('hidden');
+        menuIconClose?.classList.add('hidden');
+      });
+    });
+
+    // Sticky Header visual polish on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 30) {
+        header.classList.add('bg-dark-950/90', 'shadow-lg', 'border-white/10');
+        header.classList.remove('bg-dark-950/70', 'border-white/5');
+      } else {
+        header.classList.remove('bg-dark-950/90', 'shadow-lg', 'border-white/10');
+        header.classList.add('bg-dark-950/70', 'border-white/5');
+      }
+    });
+
+    // Hero Widget Tab Switcher
+    function switchHeroTab(tab) {
+      const tabs = ['app', 'code', 'cloud'];
+      tabs.forEach(t => {
+        const view = document.getElementById(`hero-view-${t}`);
+        const btn = document.getElementById(`hero-tab-${t}`);
+        if (t === tab) {
+          view?.classList.remove('hidden');
+          btn?.classList.add('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/30');
+          btn?.classList.remove('text-slate-400');
+        } else {
+          view?.classList.add('hidden');
+          btn?.classList.remove('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/30');
+          btn?.classList.add('text-slate-400');
+        }
+      });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Bootcamp Tracks Switcher
+    function switchBootcampTrack(track) {
+      const tracks = ['android', 'web', 'cloud'];
+      tracks.forEach(tr => {
+        const content = document.getElementById(`track-content-${tr}`);
+        const btn = document.getElementById(`track-btn-${tr}`);
+        if (tr === track) {
+          content?.classList.remove('hidden');
+          btn?.classList.add('text-white', 'bg-gradient-to-r', 'from-cyan-500', 'to-indigo-600', 'shadow-md');
+          btn?.classList.remove('text-slate-400');
+        } else {
+          content?.classList.add('hidden');
+          btn?.classList.remove('text-white', 'bg-gradient-to-r', 'from-cyan-500', 'to-indigo-600', 'shadow-md');
+          btn?.classList.add('text-slate-400');
+        }
+      });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Preselect Service in Contact Form
+    function preselectService(serviceName) {
+      const serviceSelect = document.getElementById('form-service');
+      if (serviceSelect) {
+        serviceSelect.value = serviceName;
+      }
+    }
+
+    // Service Detail Modal Data & Handler
+    const serviceDetails = {
+      mobile: {
+        title: "Mobile Application Engineering",
+        icon: "smartphone",
+        desc: "High-performance native and cross-platform mobile solutions architected for seamless user engagement, high FPS, and offline stability.",
+        deliverables: [
+          "Complete native iOS (Swift) & Android (Kotlin Jetpack Compose) architecture",
+          "Cross-platform capability using Flutter or React Native",
+          "Biometric authentication, push notifications & background sync",
+          "Automated build configurations & submission to Google Play & Apple App Store",
+          "Full source code ownership with modular clean architecture"
+        ]
+      },
+      web: {
+        title: "Custom Web Engineering & PWAs",
+        icon: "globe",
+        desc: "Enterprise-grade web systems engineered with React 19, TypeScript, and modern headless patterns.",
+        deliverables: [
+          "Modern Single-Page Applications & Progressive Web Apps with offline cache",
+          "WCAG AA accessible UI design systems with Tailwind CSS",
+          "Fast Edge deployment and sub-second core web vitals",
+          "API integration with secure authentication & payment pipelines",
+          "Fully documented codebase and component libraries"
+        ]
+      },
+      design: {
+        title: "UI/UX Systems & Prototyping",
+        icon: "palette",
+        desc: "User-centric interface design systems that look stunning and eliminate development ambiguities.",
+        deliverables: [
+          "Complete Figma Design System with variables, tokens, and components",
+          "Clickable high-fidelity interactive prototypes for stakeholder review",
+          "Responsive mobile, tablet, and desktop layout specifications",
+          "Micro-interaction and motion design guidelines",
+          "Direct developer handoff assets with exact CSS/Tailwind mappings"
+        ]
+      },
+      cloud: {
+        title: "IT Consulting, Cloud & Database Solutions",
+        icon: "cloud-cog",
+        desc: "Robust cloud infrastructure, scalable database schemas, and microservice architectures built for high availability.",
+        deliverables: [
+          "Scalable cloud setup on Google Cloud Platform, AWS, or Cloud Run",
+          "Database schema design & query optimization for Firestore & PostgreSQL",
+          "Containerization with Docker and automated GitHub Actions CI/CD",
+          "Zero-trust security audits, rate-limiting & SSL configuration",
+          "99.9% SLA uptime monitoring and disaster recovery setup"
+        ]
+      }
+    };
+
+    function openServiceModal(key) {
+      const data = serviceDetails[key];
+      if (!data) return;
+
+      document.getElementById('modal-title').textContent = data.title;
+      document.getElementById('modal-desc').textContent = data.desc;
+      
+      const listEl = document.getElementById('modal-deliverables');
+      listEl.innerHTML = '';
+      data.deliverables.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        listEl.appendChild(li);
+      });
+
+      const modal = document.getElementById('service-modal');
+      modal?.classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeServiceModal() {
+      const modal = document.getElementById('service-modal');
+      modal?.classList.add('hidden');
+    }
+
+    // Download Syllabus Feedback
+    function downloadSyllabus(track) {
+      alert(`The detailed SunAzaad ${track.toUpperCase()} Bootcamp curriculum and week-by-week syllabus has been queued! Please check your downloads or leave an inquiry in the contact form to receive the PDF pack.`);
+    }
+
+    // Contact Form Submission Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnIcon = document.getElementById('btn-icon');
+      const successBanner = document.getElementById('form-success-banner');
+
+      // Visual loading state
+      btnText.textContent = "Transmitting...";
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-75');
+
+      setTimeout(() => {
+        btnText.textContent = "Transmitted!";
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-75');
+        
+        successBanner?.classList.remove('hidden');
+        document.getElementById('inquiry-form').reset();
+        
+        // Auto scroll to success message
+        successBanner?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
+
+
