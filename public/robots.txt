@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sunazaad.vercel.app/sitemap.xml
+Sitemap: https://sunazaad.wordpress.com/sitemap.xml
